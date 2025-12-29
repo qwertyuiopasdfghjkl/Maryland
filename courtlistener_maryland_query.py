@@ -161,7 +161,7 @@ def main():
     parser.add_argument(
         '--api-key',
         help='CourtListener API key (optional, for higher rate limits)',
-        default=None
+        default='a9faf4472816402e1c94d18295ac8e8150343d74'
     )
     parser.add_argument(
         '--limit',
@@ -245,9 +245,8 @@ def main():
     print(f"Search query: {search_query}")
     print(f"Courts searched: {', '.join(maryland_courts)}")
 
-    if not args.api_key:
-        print("\nNote: For higher rate limits and more features, consider using an API key.")
-        print("Get one at: https://www.courtlistener.com/help/api/")
+    if args.api_key:
+        print("\nUsing API key for authenticated access.")
 
 
 if __name__ == "__main__":
